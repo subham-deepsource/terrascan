@@ -16,9 +16,8 @@ func (k *K8sV1) LoadIacFile(absRootPath string) (allResourcesConfig output.AllRe
 
 	fileExt := k.getFileType(absRootPath)
 	switch fileExt {
-	case YAMLExtension:
-		fallthrough
-	case YAMLExtension2:
+
+	case YAMLExtension2, YAMLExtension:
 		iacDocuments, err = utils.LoadYAML(absRootPath)
 	case JSONExtension:
 		iacDocuments, err = utils.LoadJSON(absRootPath)

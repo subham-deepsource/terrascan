@@ -78,15 +78,7 @@ Detect compliance and security violations across Infrastructure as Code to mitig
 				UseColors = false
 			}
 
-		case "true":
-			fallthrough
-		case "t":
-			fallthrough
-		case "y":
-			fallthrough
-		case "1":
-			fallthrough
-		case "force":
+		case "force", "1", "y", "t", "true":
 			UseColors = true
 
 		default:

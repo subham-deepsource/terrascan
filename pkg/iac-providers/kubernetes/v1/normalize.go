@@ -101,9 +101,8 @@ func (k *K8sV1) normalize(doc *utils.IacDocument) (*output.ResourceConfig, error
 		// error case
 		return nil, errNoKind
 	// non-namespaced resources
-	case "ClusterRole":
-		fallthrough
-	case "Namespace":
+
+	case "Namespace", "ClusterRole":
 		resourceConfig.ID = resourceConfig.Type + "." + resource.Metadata.Name
 	default:
 		// namespaced-resources
